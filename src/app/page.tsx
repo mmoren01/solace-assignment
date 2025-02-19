@@ -58,22 +58,34 @@ export default function Home() {
       <br />
       <table>
         <thead>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>City</th>
-          <th>Degree</th>
-          <th>Specialties</th>
-          <th>Years of Experience</th>
-          <th>Phone Number</th>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>City</th>
+            <th>Degree</th>
+            <th>Specialties</th>
+            <th>Years of Experience</th>
+            <th>Phone Number</th>
+          </tr>
         </thead>
         <tbody>
           {filteredAdvocates.map((advocate) => {
+            const {
+              firstName,
+              lastName,
+              city,
+              degree,
+              specialties,
+              yearsOfExperience,
+              phoneNumber
+            } = advocate
+
             return (
-              <tr>
-                <td>{advocate.firstName}</td>
-                <td>{advocate.lastName}</td>
-                <td>{advocate.city}</td>
-                <td>{advocate.degree}</td>
+              <tr key={`${firstName} ${lastName}, ${degree} - ${phoneNumber}`}>
+                <td>{firstName}</td>
+                <td>{lastName}</td>
+                <td>{city}</td>
+                <td>{degree}</td>
                 <td>
                   {advocate.specialties.map((s) => (
                     <div>{s}</div>
