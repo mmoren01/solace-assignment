@@ -14,7 +14,7 @@ export default function SearchBar({ advocates, setFilteredAdvocates }: SearchBar
     setSearchTerm(e.target.value);
   };
 
-  const handleClick = (button: string): void => {
+  const handleClick = async (button: string): Promise<void> => {
     if (button === 'reset') {
       setFilteredAdvocates(advocates);
       setSearchTerm('');
@@ -22,18 +22,17 @@ export default function SearchBar({ advocates, setFilteredAdvocates }: SearchBar
 
     if (button === 'search') {
       console.log("filtering advocates...");
-      const filteredAdvocates = advocates.filter((advocate) => {
-        return (
-          advocate.firstName.includes(searchTerm) ||
-          advocate.lastName.includes(searchTerm) ||
-          advocate.city.includes(searchTerm) ||
-          advocate.degree.includes(searchTerm) ||
-          advocate.specialties.includes(searchTerm) ||
-          advocate.yearsOfExperience === parseInt(searchTerm)
-        );
+      const response = await fetch('/api/advocates', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ searchTerm }),
       });
-    
-      setFilteredAdvocates(filteredAdvocates);
+
+      const jsonResponse = await response.json();
+      console.log('jsonResponse', jsonResponse)
+      setFilteredAdvocates(jsonResponse.data);
     };
   };
 
