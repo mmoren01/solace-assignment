@@ -1,27 +1,12 @@
-import db from "../../../db";
-import { advocates } from "../../../db/schema";
-import { ilike, or } from "drizzle-orm";
+import { getAllAdvocates, searchAdvocates } from "../../../queries/advocate-queries";
 
 export async function GET() {
-  const data = await db.select().from(advocates);
-
+  const data = await getAllAdvocates();
   return Response.json({ data });
 }
 
 export async function POST(request: Request) {
   const { searchTerm } = await request.json();
-
-  const query = db
-    .select()
-    .from(advocates)
-    .where(
-      or(
-        ilike(advocates.firstName, `%${searchTerm}%`),
-        ilike(advocates.lastName, `%${searchTerm}%`)
-      )
-    );
-
-  const data = await query;
-
+  const data = await searchAdvocates(searchTerm);
   return Response.json({ data });
-}
+};
