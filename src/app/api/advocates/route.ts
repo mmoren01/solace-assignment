@@ -1,12 +1,12 @@
-import db from "../../../db";
-import { advocates } from "../../../db/schema";
-import { advocateData } from "../../../db/seed/advocates";
+import { getAllAdvocates, searchAdvocates } from "../../../queries/advocate-queries";
 
 export async function GET() {
-  // Uncomment this line to use a database
-  const data = await db.select().from(advocates);
-
-  // const data = advocateData;
-
+  const data = await getAllAdvocates();
   return Response.json({ data });
 }
+
+export async function POST(request: Request) {
+  const { searchTerm } = await request.json();
+  const data = await searchAdvocates(searchTerm);
+  return Response.json({ data });
+};
