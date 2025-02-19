@@ -14,7 +14,7 @@ High Priority:
 [x] - MM-012 - Fix Search and Reset buttons in the search bar - Currently one button
 
 Medium Priority:
-[] - MM-005 - Unique key prop missing in the list of items
+[x] - MM-005 - Unique key prop missing in the list of items
 [] - MM-010 - Resolve Tailwind CSS install error
 [] - MM-006 - Hero image - Create header with Solace logo
 [] - MM-007 - Update Search Bar - Update Search bar UI
