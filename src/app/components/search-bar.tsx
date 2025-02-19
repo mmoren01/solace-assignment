@@ -43,7 +43,7 @@ export default function SearchBar({ advocates, setFilteredAdvocates }: SearchBar
       <p>
         Searching for: <span id="search-term"></span>
       </p>
-      <input style={{ border: "1px solid black" }} onChange={onChange} />
+      <input style={{ border: "1px solid black" }} onChange={onChange} value={searchTerm} />
       <button onClick={() => handleClick('reset')}>Reset</button>
       <button onClick={() => handleClick('search')} disabled={searchTerm === ''}>Search</button>
     </div>
