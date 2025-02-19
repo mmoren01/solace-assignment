@@ -46,6 +46,7 @@ export default function Home() {
         <tbody>
           {filteredAdvocates.map((advocate) => {
             const {
+              id,
               firstName,
               lastName,
               city,
@@ -56,14 +57,14 @@ export default function Home() {
             } = advocate
 
             return (
-              <tr key={`${firstName} ${lastName}, ${degree} - ${phoneNumber}`}>
+              <tr key={id}>
                 <td>{firstName}</td>
                 <td>{lastName}</td>
                 <td>{city}</td>
                 <td>{degree}</td>
                 <td>
-                  {specialties.map((specialty) => (
-                    <div key={specialty}>{specialty}</div>
+                  {specialties.map((specialty, index) => (
+                    <div key={`specialty-${index}`}>{specialty}</div>
                   ))}
                 </td>
                 <td>{yearsOfExperience}</td>
