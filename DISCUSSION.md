@@ -8,9 +8,9 @@ List of improvements after the first review:
 
 High Priority:
 
-[] - MM-002 - Initial UI hydration error - On page load we get an error in the console - Priority: High
-[] - MM-003 - HTML th cannot be child of thead console error - May be related to issue MM-002 - Causes hydration error
-[] - MM-004 - Error outside suspense boundary forcing client-side rendering - Priority: High
+[x] - MM-002 - Initial UI hydration error - On page load we get an error in the console - Priority: High
+[x] - MM-003 - HTML th cannot be child of thead console error - May be related to issue MM-002 - Causes hydration error
+[x] - MM-004 - Error outside suspense boundary forcing client-side rendering - Priority: High
 [] - MM-012 - Fix Search and Reset buttons in the search bar - Currently one button
 
 Medium Priority:
@@ -24,3 +24,4 @@ Low Priority:
 [] - MM-001 - Dependencies are out of date - `npm audit` flags some breaking changes in the esbuild package
 [] - MM-009 - Fix typescript errors in the `page.tsx` file
 [] - MM-011 - Componentize the search bar and table items
+[] - MM-013 - Fix layout shift on page load
