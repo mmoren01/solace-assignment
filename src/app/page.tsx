@@ -87,12 +87,12 @@ export default function Home() {
                 <td>{city}</td>
                 <td>{degree}</td>
                 <td>
-                  {advocate.specialties.map((s) => (
-                    <div>{s}</div>
+                  {specialties.map((specialty) => (
+                    <div key={specialty}>{specialty}</div>
                   ))}
                 </td>
-                <td>{advocate.yearsOfExperience}</td>
-                <td>{advocate.phoneNumber}</td>
+                <td>{yearsOfExperience}</td>
+                <td>{phoneNumber}</td>
               </tr>
             );
           })}
