@@ -37,14 +37,28 @@ export default function SearchBar({ advocates, setFilteredAdvocates }: SearchBar
   };
 
   return (
-    <div>
-      <p>Search</p>
-      <p>
-        Searching for: <span id="search-term"></span>
-      </p>
-      <input style={{ border: "1px solid black" }} onChange={onChange} value={searchTerm} />
-      <button onClick={() => handleClick('reset')}>Reset</button>
-      <button onClick={() => handleClick('search')} disabled={searchTerm === ''}>Search</button>
+    <div className="font-serif text-xl">
+      <div className="flex items-center space-x-2">
+        <span>Search for:</span>
+        <input
+          className="border border-black p-1"
+          onChange={onChange}
+          value={searchTerm}
+        />
+                <button
+          onClick={() => handleClick('reset')}
+          className="px-4 py-2 border border-black text-custom-offwhite bg-medium-green rounded hover:bg-dark-green"
+        >
+          Reset
+        </button>
+        <button
+          onClick={() => handleClick('search')}
+          disabled={searchTerm === ''}
+          className="px-4 py-2 border border-black text-custom-offwhite bg-medium-green rounded hover:bg-dark-green"
+        >
+          Search
+        </button>
+      </div>
     </div>
   )
 }

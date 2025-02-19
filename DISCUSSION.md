@@ -15,13 +15,22 @@ High Priority:
 
 Medium Priority:
 [x] - MM-005 - Unique key prop missing in the list of items
-[] - MM-010 - Resolve Tailwind CSS install error
-[] - MM-006 - Hero image - Create header with Solace logo
-[] - MM-007 - Update Search Bar - Update Search bar UI
-[] - MM-008 - Update table item UI
+[x] - MM-010 - Resolve Tailwind CSS install error
+[x] - MM-006 - Hero image - Create header with Solace logo
+[x] - MM-007 - Update Search Bar - Update Search bar UI
+[x] - MM-008 - Update table item UI
 
 Low Priority:
 [] - MM-001 - Dependencies are out of date - `npm audit` flags some breaking changes in the esbuild package
 [x] - MM-009 - Fix typescript errors in the `page.tsx` file
-[] - MM-011 - Componentize the search bar and table items
-[] - MM-013 - Fix layout shift on page load
+[x] - MM-011 - Componentize the search bar and table items
+[x] - MM-013 - Fix layout shift on page load
+
+# Other Improvements I would like to make:
+
+- Add a loading spinner when the data is being fetched
+- Add error handling for a bad search query
+- Format the phone number to be more readable
+- Make the homepage mobile friendly
+- Improve the accessibility of the site
+- Add more search functionality - Filters, sorting, etc.

@@ -5,6 +5,7 @@ import { Advocate } from "../types/advocates";
 import { useEffect, useState } from "react";
 
 import SearchBar from "./components/search-bar";
+import HomepageTable from "./components/homepage-table";
 
 export default function Home() {
   const [advocates, setAdvocates] = useState<Advocate[]>([]);
@@ -22,58 +23,13 @@ export default function Home() {
 
   return (
     <main style={{ margin: "24px" }}>
-      <h1>Solace Advocates</h1>
-      <br />
-      <br />
         <SearchBar
           advocates={advocates}
           setFilteredAdvocates={setFilteredAdvocates}
         />
       <br />
       <br />
-      <table>
-        <thead>
-          <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>City</th>
-            <th>Degree</th>
-            <th>Specialties</th>
-            <th>Years of Experience</th>
-            <th>Phone Number</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredAdvocates.map((advocate) => {
-            const {
-              id,
-              firstName,
-              lastName,
-              city,
-              degree,
-              specialties,
-              yearsOfExperience,
-              phoneNumber
-            } = advocate
-
-            return (
-              <tr key={id}>
-                <td>{firstName}</td>
-                <td>{lastName}</td>
-                <td>{city}</td>
-                <td>{degree}</td>
-                <td>
-                  {specialties.map((specialty, index) => (
-                    <div key={`specialty-${index}`}>{specialty}</div>
-                  ))}
-                </td>
-                <td>{yearsOfExperience}</td>
-                <td>{phoneNumber}</td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+      <HomepageTable advocates={filteredAdvocates} />
     </main>
   );
 }
