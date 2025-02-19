@@ -25,3 +25,12 @@ Low Priority:
 [x] - MM-009 - Fix typescript errors in the `page.tsx` file
 [x] - MM-011 - Componentize the search bar and table items
 [x] - MM-013 - Fix layout shift on page load
+
+# Other Improvements I would like to make:
+
+- Add a loading spinner when the data is being fetched
+- Add error handling for a bad search query
+- Format the phone number to be more readable
+- Make the homepage mobile friendly
+- Improve the accessibility of the site
+- Add more search functionality - Filters, sorting, etc.
